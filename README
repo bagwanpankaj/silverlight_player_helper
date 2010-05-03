@@ -1,0 +1,33 @@
+h1. JW Silverlight Player ActionView Helper
+
+h2. What Is It?
+
+*silverlight-player-helper* is a Rails plugin that presents an ActionView wrapper for rendering "JW Silverlight Player":http://www.longtailvideo.com/players/jw-wmv-player/ by using silverlight
+
+"JW Silverlight Player":http://www.longtailvideo.com/players/jw-wmv-player/ is a popular open source Media player that supports WMV, WMA and MP3 format.
+
+h2. Getting Started
+
+script/plugin install "path/to/plugin's/github/repo"
+If files are not copied autometically than run rake sl_player:install
+
+h2. How to use
+
+In your views use like
+
+jw_silverlight_player(options = {}, player_config={})
+
+in which *options* contains hash of JW Silverlight variables. You can find list of those "variables":http://developer.longtailvideo.com/trac/wiki/SilverlightVars#Layout
+and *player_config* contains hash of player_id and path to xaml file.
+
+h2. More Info
+
+In your views write
+
+@<%= jw_silverlight_player({:file => '/path/video.wmv',:width => 640, :height => 480}) %>@
+
+For More Info
+
+you can write me at bagwan.pankaj[at]railsjaipur.in
+
+Copyright (c) 2010 Bagwan Pankaj, released under the MIT license
