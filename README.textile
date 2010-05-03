@@ -8,8 +8,9 @@ h2. What Is It?
 
 h2. Getting Started
 
-script/plugin install git://github.com/bagwanpankaj/silverlight_player_helper.git
-If files are not copied autometically than run rake sl_player:install
+@script/plugin install git://github.com/bagwanpankaj/silverlight_player_helper.git@
+If files are not copied autometically than run 
+@rake sl_player:install@
 
 h2. How to use
 
