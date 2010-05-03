@@ -1,1 +1,2 @@
-# Uninstall hook code here
+puts "Now Uninstalling..."
+`rake sl_player:remove`
