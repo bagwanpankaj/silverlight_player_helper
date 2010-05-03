@@ -1,2 +1,2 @@
 puts "Now Installing..."
-`rake jw_player:install`
+`rake sl_player:install`
