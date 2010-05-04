@@ -16,7 +16,6 @@ module RailsJaipur
     def jw_silverlight_player(options = {}, player_config={})
       jw_player_config = DAEFAULT_PLAYER_CONFIG.merge(player_config)
       player_options = DEFAULT_SILVER_OPTIONS.merge(options)
-      get_config(player_options)
       container = "<div id=\"#{jw_player_config[:player_id]}\">The player will be placed here</div>"
       string = container
       string << %{<script type='text/javascript'>
