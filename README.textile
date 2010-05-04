@@ -10,27 +10,27 @@ h2. Getting Started
 
 @script/plugin install git://github.com/bagwanpankaj/silverlight_player_helper.git@
 
-If files are not copied autometically than run 
+This will automatically do what is required by JW Silverlight Player.
+
+If required files are not copied autometically under public directory then run 
 
 @rake sl_player:install@
 
 h2. How to use
 
-In your views use like
+First you need to include two javascript files into your views
 
-jw_silverlight_player(options = {}, player_config={})
+@<%= javascript_include_tag 'silverlight', 'wmvplayer' %>@
 
-in which *options* contains hash of JW Silverlight variables. You can find list of those "variables":http://developer.longtailvideo.com/trac/wiki/SilverlightVars#Layout
+then In your views use it like
+
+@<%= jw_silverlight_player({:file => '/path/video.wmv',:width => 640, :height => 480}) %>@
+
+in which *options* contains hash of JW Silverlight variables. You can find list of those "variables here":http://developer.longtailvideo.com/trac/wiki/SilverlightVars#Layout
 and *player_config* contains hash of player_id and path to xaml file.
 
 h2. More Info
 
-In your views write
-
-@<%= jw_silverlight_player({:file => '/path/video.wmv',:width => 640, :height => 480}) %>@
-
-For More Info
-
-you can write me at bagwan.pankaj[at]railsjaipur.in
+For more info write me at bagwan.pankaj[at]railsjaipur.in
 
 Copyright (c) 2010 Bagwan Pankaj, released under the MIT license
