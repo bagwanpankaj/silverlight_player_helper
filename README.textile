@@ -37,6 +37,12 @@ This plugin provides you a helper method all option supported by JW Silverlight 
 
 In options you can pass any variable supported by JW Silverlight Player. player_config contains the hash to define xaml file path, id that wraps player and css class to attach with.
 
+*Here are the list of options you can pass in player config*
+<tt>:player_id</tt>       Defines id of player container (default: 'silverlight_player')
+<tt>:player_class</tt>    Defines the css class to be used for player container (default: none)
+<tt>:xaml_file</tt>       Defines path for xaml file. (dfault: '/others/wmvplayer.xaml')
+<tt>:player_message</tt>  Defines message to be shown when something goes wrong with player initialization. (default: 'The Player will be placed here.')
+
 For more info write me at bagwan.pankaj[at]railsjaipur.in
 
 Copyright (c) 2010 Bagwan Pankaj, released under the MIT license
