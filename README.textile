@@ -1,4 +1,4 @@
-h1. JW Silverlight Player ActionView Helper
+h1. JW Silverlight Player ActionView Helper (Rails 3.x and Rails 2.x Compatible)
 
 h2. What Is It?
 
@@ -8,7 +8,13 @@ h2. What Is It?
 
 h2. Getting Started
 
+h3. Rails 2.x 
+
 @script/plugin install git://github.com/bagwanpankaj/silverlight_player_helper.git@
+
+h3. Rails 3.x
+
+@railsplugin install git://github.com/bagwanpankaj/silverlight_player_helper.git@
 
 This will automatically do what is required by JW Silverlight Player.
 

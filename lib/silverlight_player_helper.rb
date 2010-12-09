@@ -1,4 +1,5 @@
 #Copyright (c) 2010 Bagwan Pankaj
+#http://bagwanpankaj.com
 
 #Permission is hereby granted, free of charge, to any person obtaining
 #a copy of this software and associated documentation files (the
@@ -44,27 +45,27 @@ module RailsJaipur
     def silverlight_player(options = {}, player_config={})
       jw_player_config = DEFAULT_PLAYER_CONFIG.merge(player_config)
       player_options = DEFAULT_SILVERLIGHT_OPTIONS.merge(options)
-      container = "<div id=\"#{jw_player_config[:player_id]}\" class=\"#{jw_player_config[:player_class]}\">#{jw_player_config[:player_message]}</div>"
-      string = container
-      string << %{<script type='text/javascript'>
-          var elm = document.getElementById("#{jw_player_config[:player_id]}");
-          var src = '#{jw_player_config[:xaml_file]}';
-          var cfg = #{get_config(player_options)};
-          var ply = new jeroenwijering.Player(elm,src,cfg);
-      </script>}
-      string
+      
+      container = content_tag('div', jw_player_config[:player_message] , :id => jw_player_config[:player_id], :class => jw_player_config[:player_class])
+      container << javascript_tag(build_js(jw_player_config, player_options))
     end
 
     private
     
+    def buid_javascript(jw_player_config, player_options)
+      %{
+        var elm = document.getElementById("#{jw_player_config[:player_id]}");
+        var src = '#{jw_player_config[:xaml_file]}';
+        var cfg = #{get_config(player_options)};
+        var ply = new jeroenwijering.Player(elm,src,cfg);
+      }
+    end
+    alias_method :build_js, :buid_javascript
+    
     #TODO find some good implementation.
     def get_config(player_options)
-      res = "{"
-      player_options.each do |key, value|
-        res << "#{key} : '#{value}',"
-      end
-      res << "}"
-      res
+      result = player_options.collect { |key,value| "#{key.to_s} : '#{value.to_s}'" }.join(', ')
+      "{#{result}}"
     end
   end
 end
